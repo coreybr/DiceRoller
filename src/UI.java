@@ -55,9 +55,16 @@ public class UI {
 
 		int diceCount = 0;
 		int dieSides = 0;
+		String input = "";
 		while (true) {
 			System.out.print("Number of dice: ");
-			diceCount = Integer.parseInt(reader.nextLine());
+			input = reader.nextLine();
+			try {
+				diceCount = Integer.parseInt(input);
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter a valid number 0 to 2,147,483,647");
+				continue;
+			}
 			if (diceCount > 0) {
 				break;
 			} else {
@@ -66,7 +73,13 @@ public class UI {
 		}
 		while (true) {
 			System.out.print("Number of die sides: ");
-			dieSides = Integer.parseInt(reader.nextLine());
+			input = reader.nextLine();
+			try {
+				dieSides = Integer.parseInt(input);
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter a valid number 0 to 2,147,483,647");
+				continue;
+			}
 			if (dieSides > 0) {
 				break;
 			} else {
