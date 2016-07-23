@@ -62,7 +62,7 @@ public class UI {
 			try {
 				diceCount = Integer.parseInt(input);
 			} catch (NumberFormatException e) {
-				System.out.println("Please enter a valid number 0 to 2,147,483,647");
+				System.out.println("Please enter a whole number 0 to 2,147,483,647");
 				continue;
 			}
 			if (diceCount > 0) {
@@ -77,7 +77,7 @@ public class UI {
 			try {
 				dieSides = Integer.parseInt(input);
 			} catch (NumberFormatException e) {
-				System.out.println("Please enter a valid number 0 to 2,147,483,647");
+				System.out.println("Please enter a whole number 0 to 2,147,483,647");
 				continue;
 			}
 			if (dieSides > 0) {
