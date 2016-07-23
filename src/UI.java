@@ -52,10 +52,28 @@ public class UI {
 	}
 
 	private void setupDice() {
-		System.out.print("Number of dice: ");
-		int diceCount = Integer.parseInt(reader.nextLine());
-		System.out.print("Number of die sides: ");
-		int dieSides = Integer.parseInt(reader.nextLine());
+
+		int diceCount = 0;
+		int dieSides = 0;
+		while (true) {
+			System.out.print("Number of dice: ");
+			diceCount = Integer.parseInt(reader.nextLine());
+			if (diceCount > 0) {
+				break;
+			} else {
+				System.out.println("Please enter positive dice count.");
+			}
+		}
+		while (true) {
+			System.out.print("Number of die sides: ");
+			dieSides = Integer.parseInt(reader.nextLine());
+			if (dieSides > 0) {
+				break;
+			} else {
+				System.out.println("Please enter positive number of sides.");
+			}
+		}
+
 		this.roller = new Roller(diceCount, dieSides);
 		System.out.println("");
 	}
