@@ -12,23 +12,22 @@ public class UI {
 
 	public void start() {
 		System.out.println("Dice Roller");
+		System.out.println("");
+		printMenu();
 		getCommand();
 	}
 
 	private void printMenu() {
-		System.out.println("");
 		System.out.println("Choose a command:");
 		System.out.println(" r Roll dice (" + roller.DiceCount() + " dice with " + roller.DieSides() + " sides)");
 		System.out.println(" s Setup dice");
 		System.out.println(" q quit");
-		System.out.println("");
 	}
 
 	private void getCommand() {
-
+		System.out.println("");
 		String command = "";
 		while (true) {
-			printMenu();
 			System.out.print("command: ");
 			command = reader.nextLine();
 			if (command.equals("q")) {
@@ -39,10 +38,11 @@ public class UI {
 			} else if (command.equals("s")) {
 				setupDice();
 			} else {
-				System.out.println("Invalid command!");
+				printMenu();
 				getCommand();
 				break;
 			}
+			System.out.println("");
 		}
 	}
 
@@ -75,7 +75,6 @@ public class UI {
 		}
 
 		this.roller = new Roller(diceCount, dieSides);
-		System.out.println("");
 	}
 
 }
