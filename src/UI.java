@@ -48,7 +48,7 @@ public class UI {
 
 	private void rollDice() {
 		System.out.println("Rolled the dice!");
-		System.out.println(roller.roll());
+		System.out.println(roller.roll() + " Total: " + roller.getSum());
 	}
 
 	private void setupDice() {

@@ -4,6 +4,7 @@ import java.util.List;
 public class Roller {
 
 	private List<Die> dice;
+	private int sum;
 
 	public Roller() {
 		// Roll 2 6-sided dice by default
@@ -12,7 +13,8 @@ public class Roller {
 
 	public Roller(int diceCount, int dieSides) {
 		this.dice = new ArrayList<Die>();
-
+		this.sum = 0;
+		
 		for (int i = 0; i < diceCount; i++) {
 			dice.add(new Die(dieSides));
 		}
@@ -34,10 +36,16 @@ public class Roller {
 
 	public List<Integer> roll() {
 		List<Integer> result = new ArrayList<Integer>(DiceCount());
+		this.sum = 0;
 		for (Die die : dice) {
 			result.add(die.roll());
+			this.sum += result.get(result.size() - 1);
 		}
 		return result;
+	}
+	
+	public int getSum() {
+		return sum;
 	}
 
 }
