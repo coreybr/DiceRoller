@@ -32,12 +32,12 @@ public class Roller {
 		return dice.get(0).getNumberOfSides();
 	}
 
-	public List<Integer> roll(){
+	public List<Integer> roll() {
 		List<Integer> result = new ArrayList<Integer>(DiceCount());
 		for (Die die : dice) {
 			result.add(die.roll());
 		}
 		return result;
 	}
-	
+
 }
