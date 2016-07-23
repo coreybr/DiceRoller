@@ -29,7 +29,7 @@ public class UI {
 		String command = "";
 		while (true) {
 			System.out.print("command: ");
-			command = reader.nextLine();
+			command = reader.nextLine().toLowerCase();
 			if (command.equals("q")) {
 				System.out.println("Exiting...");
 				break;
