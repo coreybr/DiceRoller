@@ -14,7 +14,7 @@ public class Roller {
 	public Roller(int diceCount, int dieSides) {
 		this.dice = new ArrayList<Die>();
 		this.sum = 0;
-		
+
 		for (int i = 0; i < diceCount; i++) {
 			dice.add(new Die(dieSides));
 		}
@@ -43,7 +43,7 @@ public class Roller {
 		}
 		return result;
 	}
-	
+
 	public int getSum() {
 		return sum;
 	}
